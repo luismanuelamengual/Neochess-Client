@@ -1,0 +1,22 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    macro-logo {
+        width: 223px;
+        margin: 2.5rem 0 5.94rem;
+    }
+
+    #main-title {
+        margin-bottom: 1rem;
+    }
+
+    #secondary-title {
+        margin-bottom: 3.75rem;
+    }
+
+    .animation-container {
+        max-width: 500px;
+    }
+}
