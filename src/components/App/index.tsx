@@ -1,6 +1,6 @@
 import React from "react";
 import {Provider} from "react-redux";
-import {store, storePersistor} from "../../store/store";
+import {store, storePersistor} from "../../store";
 import {PersistGate} from "redux-persist/integration/react";
 import Loading from "../Loading";
 import Navigation from "../Navigation";
