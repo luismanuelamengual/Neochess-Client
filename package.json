@@ -26,6 +26,10 @@
         "build": "react-scripts build"
     },
     "dependencies": {
+        "@emotion/react": "^11.7.1",
+        "@emotion/styled": "^11.6.0",
+        "@mui/icons-material": "^5.2.5",
+        "@mui/material": "^5.2.5",
         "@reduxjs/toolkit": "^1.6.0",
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^11.2.7",
@@ -51,6 +55,7 @@
         "@ffmpeg-installer/ffmpeg": "^1.0.20",
         "@types/minimist": "^1.2.2",
         "@types/react-router-dom": "^5.1.7",
+        "http-server": "^13.0.2",
         "minimist": "^1.2.5",
         "testcafe": "^1.15.2",
         "testcafe-react-selectors": "^4.1.5",
@@ -59,7 +64,6 @@
         "testcafe-reporter-list": "^2.1.0",
         "testcafe-reporter-nunit": "^0.1.2",
         "testcafe-reporter-tesults": "^1.0.0",
-        "testcafe-reporter-xunit": "^2.1.0",
-        "http-server": "^13.0.2"
+        "testcafe-reporter-xunit": "^2.1.0"
     }
 }
