@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import {useAppSelector} from '../../store';
 import './index.scss';
 
 function Copyright(props: any) {
@@ -21,10 +22,11 @@ function Copyright(props: any) {
             {'.'}
         </Typography>
     );
-  }
+}
 
 export default function LoginPage() {
-    
+    const isConnected = useAppSelector((state) => state.connection.connected);
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -32,7 +34,7 @@ export default function LoginPage() {
             email: data.get('email'),
             password: data.get('password'),
         });
-      };
+    };
 
     return (
         <Container component="main" maxWidth="xs">
@@ -44,7 +46,7 @@ export default function LoginPage() {
                     <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus/>
                     <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password"/>
                     <FormControlLabel control={<Checkbox value="remember" color="primary" />}label="Remember me"/>
-                    <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>Sign In</Button>
+                    <Button type="submit" disabled={!isConnected} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>Sign In</Button>
                     <Grid container>
                         <Grid item xs><Link href="#" variant="body2">Forgot password?</Link></Grid>
                         <Grid item><Link href="#" variant="body2">{"Don't have an account? Sign Up"}</Link></Grid>

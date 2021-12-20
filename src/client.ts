@@ -1,15 +1,16 @@
 import {io} from 'socket.io-client';
+import {store,connected,disconnected} from './store';
 
 export const client = io('http://localhost:5000', { 
-    reconnectionDelayMax: 10000,    
+    reconnection: true,
+    reconnectionDelay: 500,   
     transports: ['websocket']
 });
 
 client.on('connect', () => {
-    console.log("Connected!");
-    client.emit('testMsg', 'a message');
+    store.dispatch(connected({}));
 });
 
 client.on('disconnect', () => {
-    console.log("Disconnected!");
+    store.dispatch(disconnected({}));
 });
