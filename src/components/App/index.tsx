@@ -1,12 +1,13 @@
-import {Provider} from "react-redux";
+
 import {store, storePersistor} from "../../store";
 import {PersistGate} from "redux-persist/integration/react";
+import {Provider} from "react-redux";
+import history from "../../history";
 import Loading from "../Loading";
 import LoginPage from "../LoginPage";
-import history from "../../history";
-import {Redirect, Route, Switch} from "react-router-dom";
 import {Path} from "../../paths";
-import {ConnectedRouter} from "connected-react-router";
+import {ConnectedRouter} from "connected-react-router"; 
+import {Redirect, Route, Switch} from "react-router-dom";
 
 export default function App() {
     return (
